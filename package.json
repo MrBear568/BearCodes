@@ -1,0 +1,19 @@
+{
+  "name": "bearcode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrBear568/BearCodes.git"
+  },
+  "author": "MrBear",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrBear568/BearCodes/issues"
+  },
+  "homepage": "https://github.com/MrBear568/BearCodes#readme"
+}
