@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/MrBear568/BearCodes/issues"
   },
-  "homepage": "https://github.com/MrBear568/BearCodes#readme"
+  "homepage": "https://github.com/MrBear568/BearCodes#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
