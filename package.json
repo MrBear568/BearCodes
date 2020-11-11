@@ -18,6 +18,7 @@
   "homepage": "https://github.com/MrBear568/BearCodes#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^5.10.13"
+    "mongoose": "^5.10.13",
+    "node-fetch": "^2.6.1"
   }
 }
