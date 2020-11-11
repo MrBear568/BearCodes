@@ -3,12 +3,17 @@ html
         title Jokes
         meta(charset="UTF-8")
     body
-    h1 Jokes
-        each joke in jokes
-            ul
-            
+        div
+            h1 Jokes
+            each joke in jokes
+                ul
+                -// mangler at køre igennem alle jokes der er lavet i forvejen
+                -// og sætte det i en ul(unordered list)
 
-    -// mangler at køre igennem alle jokes der er lavet i forvejen
-    -// og sætte det i en ul(unordered list)
+        div
+            h1 Other jokes
+            -// each api in apier
+            -// mangler at køre igennem alle apier der er lavet i forvejen
+            -// og sætte det i en ul(unordered list)
 
 
