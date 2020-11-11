@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const jokes = require('../models/jokes');
+const config = require('../config');
 
 mongoose.connect(config.databaseURI, {useNewUrlParser: true, useUnifiedTopology: true});
 
