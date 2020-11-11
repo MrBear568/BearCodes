@@ -5,15 +5,15 @@ html
     body
         div
             h1 Jokes
-            each joke in jokes
-                ul
-                -// mangler at køre igennem alle jokes der er lavet i forvejen
-                -// og sætte det i en ul(unordered list)
+            ul
+                each joke in jokes
+                    li= joke
 
         div
             h1 Other jokes
-            -// each api in apier
-            -// mangler at køre igennem alle apier der er lavet i forvejen
-            -// og sætte det i en ul(unordered list)
+            ul
+                each api in apier
+                    li= api
+    include opret.pug
 
 
