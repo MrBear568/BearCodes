@@ -2,8 +2,8 @@
 const fetch = require('node-fetch');
 let registryUrl = 'https://krdo-joke-registry.herokuapp.com/api/services';
 
-async function get(url) {
-    const respons = await fetch(url);
+async function get() {
+    const respons = await fetch(registryUrl);
     if (respons.status !== 200) // OK
         throw new Error(respons.status);
     return await respons.json();
