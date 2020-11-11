@@ -12,5 +12,5 @@ exports.createJoke = function (setup, punchline) {
 };
 
 exports.getJokes = function () {
-    return jokes.find().populate('').exec();
+    return jokes.find().populate('jokes').exec();
 };
