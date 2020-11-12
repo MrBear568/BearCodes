@@ -9,11 +9,15 @@ html
             option
                 a(href= side.address) #{side.name}
     br
+
+    //---------------------------
     each joke in enkelt
         br
         p Setup: #{joke.setup}
         p Punchline: #{joke.punchline}
         br
+
+    
     -// each joke in jokes
     -// mangler at køre igennem alle jokes der er lavet i forvejen
     -// og sætte det i en ul(unordered list)

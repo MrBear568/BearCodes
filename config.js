@@ -1,6 +1,5 @@
-const config = {
-    databaseURI: 'mongodb://localhost' + '/companyDB', // or MongoDB Atlas connection URI
-    localPort: 8080
-};
+const config = {};
+config.mongoDB = 'mongodb://localhost/jokes'
+config.localPort = 8080;
 
 module.exports = config;
