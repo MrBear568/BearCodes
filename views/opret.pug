@@ -1,10 +1,18 @@
 html
     header
-    title Opret en joke. I D I O T 
+    title #{title}
         meta(charset="UTF-8")
     body
-        form(method="post" action="/")
+    h1 Opret en joke
+    form(method="post" action="/api/jokes")
         input(type="text" name="setup" placeholder="Setup")
         input(type="text" name="punchline" placeholder="punchline")
         button(type="submit") Opret joke
-            Opretjoke
+    br
+    br
+    ul
+        each joke in jokes
+            p Setup: #{joke.setup}
+            p Punchline: #{joke.punchline}
+            br
+        
