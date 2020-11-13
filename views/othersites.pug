@@ -1,0 +1,17 @@
+extends setup
+
+block content
+    h1 Other sites
+    table
+        tr
+            th Site name
+            th deres page
+            th deres jokes
+        each site in allSites
+            if (site.name)
+                tr
+                    td #{site.name}
+                    td
+                        a(href=site.address)
+                    td
+                        a(href='/othersites/' + site.name)
