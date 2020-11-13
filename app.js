@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
 app.set('view engine', 'pug');
-if (process.env.NODE_ENV !== 'production') {
-    require('dotenv').config();
-}
+// if (process.env.NODE_ENV !== 'production') {
+//     require('dotenv').config();
+// }
 
 const bodyparser = require('body-parser');
 app.use(bodyparser.json());
