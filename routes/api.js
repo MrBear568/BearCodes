@@ -42,6 +42,18 @@ router.get('/otherjokes/:site', async (request, response) => {
                 break
             }
         }
+
+        / Hvis url aldrig bliver sat (der findes ikke en side med det navn)
+        if (!url) {
+            throw new Error('Site does not exist')
+        }
+        if (url.substr(-1) !== '/') {
+            url = url + '/';
+        }
+        let chosenSite = await fetch(url + 'api/jokes')
+        let chosenData = await chosenSite.json()
+        response.render('jokes', { jokes: chosenData })
+        
     } catch (error) {
         console.log(error)
     }
