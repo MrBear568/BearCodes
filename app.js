@@ -24,7 +24,7 @@ app.use('/', jokesRoute);
 app.use('/api/othersites', jokesRoute);
 //app.use('/api/jokes', jokesRoute);
 
-app.listen(process.env.PORT, () =>{
+app.listen(process.env.PORT, config.localPort, () =>{
     console.log(`server kører på port ${config.localPort}`);
 })
 
