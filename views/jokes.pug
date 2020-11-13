@@ -1,26 +1,26 @@
 html
     header
         a(href='/jokes') Jokes
+        br
         a(href='/othersites') Andre sites
-        
+
         title Jokes
         meta(charset="UTF-8")
     body
     h1 Jokes
     form(action="/jokes", method="post")
-        label Setup:
-        input(type="text", name="setup")
+        input(type="text", name="setup", placeholder="Setup")
         br
-        label Punchline:
-        input(type="text", name="punchline")
+        input(type="text", name="punchline", placeholder="Punchline")
         br
         button(type="submit") Submit joke
     br
     table
-        each joke in jokes
-            tr
-                td #{joke.setup}
-                td#punchline #{joke.punchline}
+        h3 Setup:---------------------------Punchline:
+            each joke in jokes
+                tr
+                    td #{joke.setup}
+                    td #{joke.punchline}
 
     
     -// each joke in jokes
