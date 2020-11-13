@@ -10,7 +10,7 @@ app.use(bodyparser.urlencoded({extended: false}));
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise
 console.log(config.mongoDBHost);
-mongoose.connect('mongodb://localhost/jokes', {
+mongoose.connect(config.mongoDBHost, {
     useNewUrlParser: true,
     useCreateIndex: true,
     autoIndex: true, 
@@ -24,7 +24,7 @@ app.use('/', jokesRoute);
 app.use('/api/othersites', jokesRoute);
 //app.use('/api/jokes', jokesRoute);
 
-app.listen(config.localPort, () =>{
+app.listen(process.env.PORT, config.localPort, () =>{
     console.log(`server kører på port ${config.localPort}`);
 })
 
