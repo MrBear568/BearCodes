@@ -36,16 +36,21 @@ router.post('/', async (req, res) => {
 
 router.get('/api/jokes', async (req, res) => {
     const jokes = await controller.getJokes();
-    res.render('opret', {title: 'Opret Joke', jokes: jokes});
+    res.render('opret', { title: 'Opret Joke', jokes: jokes });
 })
 
 router.post('/api/jokes', async (req, res) => {
     console.log("Okay guys denne post er aktiveret");
     const setup = req.body.setup
     const punchline = req.body.punchline
-   await controller.createJoke(setup, punchline).then(() =>{
-    res.redirect('/');
-   })
+    if (setup.length < 0 || punchline.length < 0) {
+        console.log('Joke kan ikke oprettes, et felt er ikke blevet udfyldt.')
+    } else {
+        await controller.createJoke(setup, punchline).then(() => {
+            res.redirect('/');
+        })
+    }
+})
 })
 
 module.exports = router;
