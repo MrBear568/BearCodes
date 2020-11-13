@@ -19,11 +19,10 @@ router.get('/api/otherjokes/:site', async (req, res) => {
 
 
 router.get('/', async (req, res) => {
-    // let sides = await controller.getSides();
-    // // let specificSide = await controller.getSpecificSide(sides[1].address + '/api/jokes');
-    // let jokes = await controller.getJokes();
-    // res.render('samlet', { sider: sides, enkelt: specificSide, jokes: jokes });
-    res.send('Hi')
+    let sides = await controller.getSides();
+    let specificSide = await controller.getSpecificSide(sides[1].address + '/api/jokes');
+    let jokes = await controller.getJokes();
+    res.render('samlet', { sider: sides, enkelt: specificSide, jokes: jokes });
 })
 
 router.post('/', async (req, res) => {
