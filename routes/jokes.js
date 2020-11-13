@@ -51,6 +51,5 @@ router.post('/api/jokes', async (req, res) => {
         })
     }
 })
-})
 
 module.exports = router;
