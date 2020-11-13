@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 app.set('view engine', 'pug');
-const config = require('./config');
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
 }
