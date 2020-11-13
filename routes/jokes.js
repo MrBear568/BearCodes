@@ -43,8 +43,9 @@ router.post('/api/jokes', async (req, res) => {
     console.log("Okay guys denne post er aktiveret");
     const setup = req.body.setup
     const punchline = req.body.punchline
-    if (setup.length < 0 || punchline.length < 0) {
+    if (setup.length <= 0 || punchline.length <= 0) {
         console.log('Joke kan ikke oprettes, et felt er ikke blevet udfyldt.')
+        res.redirect('/');
     } else {
         await controller.createJoke(setup, punchline).then(() => {
             res.redirect('/');
