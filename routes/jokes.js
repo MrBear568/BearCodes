@@ -15,18 +15,15 @@ router.get('/api/othersites', async (req, res) => {
 })
 
 router.get('/api/otherjokes/:site', async (req, res) => {
-    console.log('linje 19')
     let data = []
     try {
         let otherSites = await fetch('https://krdo-joke-registry.herokuapp.com/api/services')
         data = await otherSites.json()
         let sitename = req.params.site
-        console.log('linje 44 executed')
         let url
         let element
         for (let i = 0; i < data.length; i++) {
             element = data[i];
-            console.log(element.name, ' ', sitename);
             if (element.name && element.name.toLowerCase() === sitename.toLowerCase()) {
                 url = element.address
                 break
