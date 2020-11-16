@@ -28,7 +28,7 @@ db.once('open', () => console.log('Connected to mongoose'))
 const jokesRoute = require('./routes/jokes');
 app.use('/', jokesRoute);
 app.use('/api/othersites', jokesRoute);
-//app.use('/api/jokes', jokesRoute);
+app.use('/api/jokes', jokesRoute);
 
 app.listen(process.env.PORT, () => {
     console.log(`server kører på port ${process.env.PORT}`);
