@@ -33,9 +33,10 @@ router.get('/api/otherjokes/:site', async (req, res) => {
             }
         }
 
-        //if (url.substr(-1) !== '/') {
-        //  url = url + '/';
-        // }
+        if (url.substr(-1) !== '/') {
+          url = url + '/';
+         }
+        console.log(url)
         let chosenSite = await fetch(url + 'api/jokes')
         let chosenData = await chosenSite.json()
         res.render('andreJokes', { title: 'Andre folks jokes', jokes: chosenData });
