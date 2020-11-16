@@ -29,6 +29,8 @@ router.post('/', async (req, res) => {
     console.log('virker her')
     const setup = req.body.setup
     const punchline = req.body.punchline
+    const body = await req.body.option
+    console.log(body);
     controller.createJoke(setup, punchline)
 
     // res.redirect('/api/jokes')
@@ -43,6 +45,8 @@ router.post('/api/jokes', async (req, res) => {
     console.log("Okay guys denne post er aktiveret");
     const setup = req.body.setup
     const punchline = req.body.punchline
+    const body = await req.body.jesper
+    console.log(body);
    await controller.createJoke(setup, punchline).then(() =>{
     res.redirect('/');
    })
