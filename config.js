@@ -1,5 +1,5 @@
 const config = {};
-config.mongoDBHost = 'mongodb://localhost/jokes';
+config.mongoDBHost = process.DATABASE_URL;
 config.localPort = 8080;
 
 module.exports = config;
