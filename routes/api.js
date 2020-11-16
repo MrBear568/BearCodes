@@ -43,7 +43,7 @@ router.get('/otherjokes/:site', async (request, response) => {
             }
         }
 
-        / Hvis url aldrig bliver sat (der findes ikke en side med det navn)
+        //Hvis url aldrig bliver sat (der findes ikke en side med det navn)
         if (!url) {
             throw new Error('Site does not exist')
         }
