@@ -30,9 +30,12 @@ app.use('/', jokesRoute);
 app.use('/api/othersites', jokesRoute);
 app.use('/api/jokes', jokesRoute);
 
-app.listen(process.env.PORT, () => {
-    console.log(`server kører på port ${process.env.PORT}`);
+let server = app.listen(process.env.PORT || 8080, () => {
+    let port = server.address().port;
+    console.log(`server kører på port ${port}`);
 })
+
+
 
 
 // mika test
