@@ -12,8 +12,7 @@ app.use(bodyparser.urlencoded({extended: false}));
 
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise
-console.log(process.env.DATABASE_URL);
-mongoose.connect('mongodb://localhost/jokes', {
+mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
     useCreateIndex: true,
     autoIndex: true, 
