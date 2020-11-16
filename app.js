@@ -12,7 +12,7 @@ app.use(bodyparser.urlencoded({extended: false}));
 
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise
-mongoose.connect('mongodb+srv://admin:<admin>@bearcluster.wat3l.mongodb.net/<BearJokes>?retryWrites=true&w=majority', {
+mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
     useCreateIndex: true,
     autoIndex: true, 
