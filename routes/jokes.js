@@ -14,14 +14,31 @@ router.get('/api/othersites', async (req, res) => {
     }
 })
 
-router.get('/api/otherjokes/:site', async (req, res) => {
+router.get('/:site', async (req, res) => {
+    let data = []
     try {
-        let address = req.params.site;
-        console.log(address);
-        let site = await controller.getSpecificSide('https://' + address + '/api/jokes');
-        res.send(site);
+        let otherSites = await fetch('https://krdo-joke-registry.herokuapp.com/api/services')
+        data = await otherSites.json()
+        let sitename = request.params.site
+        let url
+        let element
+        for (let i = 0; i < data.length; i++) {
+            element = data[i];
+            console.log(element.name, ' ', sitename);
+            if (element.name && element.name.toLowerCase() === sitename.toLowerCase()) {
+                url = element.address
+                break
+            }
+        }
+        
+        if (url.substr(-1) !== '/') {
+            url = url + '/';
+        }
+        let chosenSite = await fetch(url + 'api/jokes')
+        let chosenData = await chosenSite.json()
+        response.render('opret', { jokes: chosenData })
     } catch (error) {
-        console.log(error);
+        console.log(error)
     }
 })
 

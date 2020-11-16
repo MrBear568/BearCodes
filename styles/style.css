@@ -21,6 +21,10 @@
     }
 }
 
+#othercolA, #othercolB {
+    text-align: center;
+}
+
 body {
     -webkit-animation: bgcolor 20s infinite;
     animation: bgcolor 10s infinite;
