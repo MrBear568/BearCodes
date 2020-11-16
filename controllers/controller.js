@@ -21,7 +21,7 @@ exports.getSides = async function get() {
         const respons = await fetch(registryUrl);
         if (respons.status !== 200) // OK
             throw new Error(respons.status);
-        return await respons.json();
+        return respons.json();
     } catch (error) {
         console.log(error)
     }
@@ -32,7 +32,7 @@ exports.getSpecificSide = async function (url) {
         const respons = await fetch(url);
         if (respons.status !== 200) // OK
             throw new Error(respons.status);
-        return await respons.json();
+        return respons.json();
     } catch (error) {
         console.log(error);
     }
