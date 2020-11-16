@@ -18,9 +18,9 @@ async function main(url) {
     try {
         let respons = await post(url,
             {
-                "name": "Bjornebanden",
-                "address": "https://beartester.herokuapp.com/",
-                "secret": "admin123",
+                "name": "Test",
+                "address": "http://test.dk",
+                "secret": "secret password",
             }
         );
         console.log(respons);
