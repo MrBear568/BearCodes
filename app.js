@@ -28,7 +28,7 @@ const jokesRoute = require('./routes/jokes');
 app.use('/', jokesRoute);
 app.use('/api/othersites', jokesRoute);
 app.use('/api/jokes', jokesRoute);
-app.use('/api/othersites/:site', jokesRoute)
+app.use('api/otherjokes/:site', jokesRoute)
 
 let server = app.listen(process.env.PORT || 8080, () => {
     let port = server.address().port;

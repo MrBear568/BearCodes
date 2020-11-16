@@ -1,0 +1,19 @@
+html
+    style
+        include ../styles/style.css
+    header
+        a(href='/api/jokes') Jokes
+        br
+        a(href='/api/othersites') Andre sites
+
+    title #{title}
+        meta(charset="UTF-8")
+    body
+    br
+    br
+    table
+        each joke in jokes
+            p Setup: #{joke.setup}
+            p Punchline: #{joke.punchline}
+            br
+        
