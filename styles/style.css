@@ -25,6 +25,11 @@
     text-align: center;
 }
 
+table {
+    grid-column-start: 1;
+    grid-column-end: 1;
+}
+
 body {
     -webkit-animation: bgcolor 20s infinite;
     animation: bgcolor 10s infinite;
