@@ -1,20 +1,26 @@
 html
     header
+        a(href='/jokes') Jokes
+        br
+        a(href='/othersites') Andre sites
+
         title Jokes
         meta(charset="UTF-8")
     body
-    h1 Jokes fra anden site
-    select 
-        each side in sider
-            option
-                a(href= side.address) #{side.address}
-    br
-
-    //---------------------------
-    each jokeSpSite in enkelt
-        p Setup: #{jokeSpSite.setup}
-        p Punchline: #{jokeSpSite.punchline}
+    h1 Jokes
+    form(action="/jokes", method="post")
+        input(type="text", name="setup", placeholder="Setup")
         br
+        input(type="text", name="punchline", placeholder="Punchline")
+        br
+        button(type="submit") Submit joke
+    br
+    table
+        h3 Setup:---------------------------Punchline:
+            each joke in jokes
+                tr
+                    td #{joke.setup}
+                    td #{joke.punchline}
 
     
     -// each joke in jokes
