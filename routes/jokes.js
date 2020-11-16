@@ -28,10 +28,11 @@ router.get('/api/otherjokes/:site', async (req, res) => {
 
 router.get('/', async (req, res) => {
     try {
-        let sides = await controller.getSides();
-        let specificSide = await controller.getSpecificSide(sides[1].address + '/api/jokes');
-        let jokes = await controller.getJokes();
-        res.render('opret', {jokes: jokes });
+        // let sides = await controller.getSides();
+        // let specificSide = await controller.getSpecificSide(sides[1].address + '/api/jokes');
+        // let jokes = await controller.getJokes();
+        // res.render('opret', {jokes: jokes });
+        res.redirect('/api/jokes')
     } catch (error) {
         console.log(error);
     }
