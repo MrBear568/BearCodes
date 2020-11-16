@@ -3,7 +3,6 @@ const express = require('express');
 const router = express.Router();
 const fetch = require("node-fetch")
 
-//Sebastian og Jesper
 router.get('/api/othersites', async (req, res) => {
     try {
         let sides = await controller.getSides();
@@ -33,13 +32,13 @@ router.get('api/otherjokes/:site', async (req, res) => {
                 break
             }
         }
-        
+
         //if (url.substr(-1) !== '/') {
-          //  url = url + '/';
-       // }
+        //  url = url + '/';
+        // }
         let chosenSite = await fetch(url + 'api/jokes')
         let chosenData = await chosenSite.json()
-        res.render('andreJokes', { title: 'Andre folks jokes', jokes: chosenData});
+        res.render('andreJokes', { title: 'Andre folks jokes', jokes: chosenData });
     } catch (error) {
         console.log(error)
     }
