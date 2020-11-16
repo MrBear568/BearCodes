@@ -6,8 +6,6 @@ const fetch = require("node-fetch")
 router.get('/api/othersites', async (req, res) => {
     try {
         let sides = await controller.getSides();
-        //let specificSide = await controller.getSpecificSide(sides[1].address + '/api/jokes');
-        // console.log(sides[3].address);
         res.render('jokes', { sider: sides });
     } catch (error) {
         console.log(error);
@@ -15,27 +13,24 @@ router.get('/api/othersites', async (req, res) => {
 })
 
 router.get('api/otherjokes/:site', async (req, res) => {
-    console.log('linje 19')
     let data = []
     try {
         let otherSites = await fetch('https://krdo-joke-registry.herokuapp.com/api/services')
         data = await otherSites.json()
         let sitename = req.params.site
-        console.log('linje 44 executed')
         let url
         let element
         for (let i = 0; i < data.length; i++) {
             element = data[i];
-            console.log(element.name, ' ', sitename);
             if (element.name && element.name.toLowerCase() === sitename.toLowerCase()) {
                 url = element.address
                 break
             }
         }
 
-        //if (url.substr(-1) !== '/') {
-        //  url = url + '/';
-        // }
+        if (url.substr(-1) !== '/') {
+            url = url + '/';
+        }
         let chosenSite = await fetch(url + 'api/jokes')
         let chosenData = await chosenSite.json()
         res.render('andreJokes', { title: 'Andre folks jokes', jokes: chosenData });
@@ -59,7 +54,6 @@ router.get('/', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-    console.log('virker her')
     const setup = req.body.setup
     const punchline = req.body.punchline
     try {
@@ -67,9 +61,6 @@ router.post('/', async (req, res) => {
     } catch (error) {
         console.log(error);
     }
-
-
-    // res.redirect('/api/jokes')
 })
 
 router.get('/api/jokes', async (req, res) => {
