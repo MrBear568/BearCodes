@@ -26,11 +26,13 @@
 }
 
 #jokestabel {
+    color:white; 
     grid-column-start: 1;
     grid-column-end: 1;
 }
 
 #andrejokestable {
+    color:white; 
     grid-column-start: 1;
     grid-column-end: 1;
 }
