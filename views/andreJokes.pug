@@ -13,7 +13,10 @@ html
     br
     table(id= "andrejokestable")
         each joke in jokes
-            p Setup: #{joke.setup}
-            p Punchline: #{joke.punchline}
+        tr
+            td 
+                p Setup: #{joke.setup}
+            td 
+                p Punchline: #{joke.punchline}
             br
         
