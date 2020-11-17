@@ -11,12 +11,9 @@ html
     body
     br
     br
-    table(id= "andrejokestable")
+    div(id= "andrejokestable")
         each joke in jokes
-        tr
-            td 
-                p Setup: #{joke.setup}
-            td 
-                p Punchline: #{joke.punchline}
+            p Setup: #{joke.setup}
+            p Punchline: #{joke.punchline}
             br
         
